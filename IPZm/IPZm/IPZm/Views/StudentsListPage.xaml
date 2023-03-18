@@ -4,13 +4,17 @@
              xmlns:vm="clr-namespace:IPZm.ViewModels;assembly=IPZm"
              xmlns:m="clr-namespace:IPZm.Models;assembly=IPZm"
              x:Class="IPZm.Views.StudentsListPage"
-             x:DataType="vm:StudentsListPageViewModel">
+             x:DataType="vm:StudentsListPageViewModel"
+             Title="Students">
         <CollectionView
-            Margin="0,50,0,0"
+            x:Name="CollectionView"
+            SelectionMode="Single"
+            SelectionChangedCommand="{Binding StudentSelectedCommand}"
+            SelectionChangedCommandParameter="{Binding Source={x:Reference CollectionView}, Path=SelectedItem}"
             ItemsSource="{Binding Students}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="m:Student">
-                    <Label Padding="16,4" Text="{Binding FullName}"></Label>
+                    <Label Padding="16,16" Text="{Binding FullName}"></Label>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

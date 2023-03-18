@@ -7,6 +7,6 @@ namespace IPZm.Models
             FullName = fullName;
         }
 
-        public string FullName { get; private set; }
+        public string FullName { get; }
     }
 }

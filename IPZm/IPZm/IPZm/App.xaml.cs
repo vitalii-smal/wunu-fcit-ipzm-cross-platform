@@ -13,7 +13,7 @@ namespace IPZm
         {
             InitializeComponent();
 
-            MainPage = new StudentsListPage();
+            MainPage = new NavigationPage(new StudentsListPage());
         }
 
         protected override void OnStart()
