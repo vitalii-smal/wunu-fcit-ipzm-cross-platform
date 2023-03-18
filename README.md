@@ -19,6 +19,6 @@ Help links:
 ## Practical task #1
 
 - create subdirectory with your `[FirstName][LastName]` (e.g. `VitaliiSmal`) under Students directory
-- create page [`FirstName][LastName]ViewModel` (e.g. `VitaliiSmalViewModel`) which inherits from `BaseStudentViewModel`
+- create view model [`FirstName][LastName]ViewModel` (e.g. `VitaliiSmalViewModel`) which inherits from `BaseStudentViewModel`
 - create page `[FirstName][LastName]View` (e.g. `VitaliiSmalView`) which inherits from `BaseStudentContentPage` and set `BindingContext`
 - add your page and Student model with your name to `_studentsPageDictionary` in `StudentsListPageViewModel`
