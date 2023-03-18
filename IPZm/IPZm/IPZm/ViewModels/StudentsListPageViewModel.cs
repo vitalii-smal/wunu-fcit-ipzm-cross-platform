@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Input;
 using IPZm.Models;
 using IPZm.Students.Base;
+using IPZm.Students.BorysHlynskyi;
 using IPZm.Students.VitaliiSmal;
 using Xamarin.Forms;
 
@@ -13,6 +14,7 @@ namespace IPZm.ViewModels
         private readonly Dictionary<BaseStudentContentPage, Student> _studentsPageDictionary = new Dictionary<BaseStudentContentPage, Student>
         {
             { new VitaliiSmalView(), new Student("Vitalii Smal") },
+            { new BorysHlynskyiView(), new Student("Borys Hlynskyi") },
         };
 
         public StudentsListPageViewModel()
