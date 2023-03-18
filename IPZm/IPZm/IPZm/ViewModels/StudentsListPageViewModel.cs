@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using IPZm.Models;
+using IPZm.Students.AndriiKovalets;
 using IPZm.Students.Base;
 using IPZm.Students.BorysHlynskyi;
 using IPZm.Students.VitaliiSmal;
@@ -15,6 +16,7 @@ namespace IPZm.ViewModels
         {
             { new VitaliiSmalView(), new Student("Vitalii Smal") },
             { new BorysHlynskyiView(), new Student("Borys Hlynskyi") },
+            { new AndriiKovaletsView(), new Student("Andrii Kovalets") },
         };
 
         public StudentsListPageViewModel()
