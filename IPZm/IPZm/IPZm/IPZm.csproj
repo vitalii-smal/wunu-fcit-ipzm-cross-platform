@@ -12,4 +12,10 @@
     <ItemGroup>
         <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Students\AndriiStepaniuk\AndriiStepaniukView.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+    </ItemGroup>
 </Project>
