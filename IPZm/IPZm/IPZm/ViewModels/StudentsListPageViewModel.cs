@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
@@ -11,9 +12,36 @@ namespace IPZm.ViewModels
 {
     public class StudentsListPageViewModel
     {
+        private static Student vitaliiSmal = new Student(
+            "Vitalii",
+            "Smal",
+            "https://bit.ly/40dpdda", 
+            "Xamarin developer",
+            "+38 099 689 18 13",
+            "VITALIISMAL",
+            new List<string>
+            {
+                "C#", ".NET", "Xamarin", 
+                "Android", "iOS", "ASP.NET", 
+                "Kotlin", "Swift", "Git", "Bash", "PowerShell"
+            },
+            new List<ExperienceItem>
+            {
+                new ExperienceItem(
+                    "ELEKS",
+                    new DateTime(2016,7, 1),
+                    new DateTime(2021,1, 1),
+                    "Ternopil"),
+                new ExperienceItem(
+                    "Vector Software",
+                    new DateTime(2021,1, 1),
+                    new DateTime(2022,9, 1),
+                    "Remote"),
+            });
+        
         private readonly Dictionary<BaseStudentContentPage, Student> _studentsPageDictionary = new Dictionary<BaseStudentContentPage, Student>
         {
-            { new VitaliiSmalView(), new Student("Vitalii Smal") },
+            { new VitaliiSmalView(), vitaliiSmal },
             { new BorysHlynskyiView(), new Student("Borys Hlynskyi") },
         };
 
