@@ -1,6 +1,165 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <base:BaseStudentContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:base="clr-namespace:IPZm.Students.Base;assembly=IPZm"
-             x:Class="IPZm.Students.OleksandrKot.OleksandrKotView">
+                             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                             xmlns:base="clr-namespace:IPZm.Students.Base;assembly=IPZm"
+                             xmlns:oleksandrKot="clr-namespace:IPZm.Students.OleksandrKot;assembly=IPZm"
+                             xmlns:models="clr-namespace:IPZm.Models"
+                             xmlns:converters="clr-namespace:IPZm.Students.OleksandrKot.Converters"
+                             x:DataType="oleksandrKot:OleksandrKotViewModel"
+                             x:Class="IPZm.Students.OleksandrKot.OleksandrKotView"
+                             Title="Student Details"
+                             x:Name="_this">
+    <base:BaseStudentContentPage.Resources>
+        <Style x:Key="SectionFrameStyle"
+               TargetType="Frame">
+            <Setter Property="HasShadow"
+                    Value="True" />
+            <Setter Property="Margin"
+                    Value="3" />
+            <Setter Property="CornerRadius"
+                    Value="10" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0"
+                                         EndPoint="0,1">
+                        <GradientStop Color="#dcebfc"
+                                      Offset="0.1" />
+                        <GradientStop Color="White"
+                                      Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="ImageButton">
+            <Setter Property="BackgroundColor"
+                    Value="Transparent" />
+            <Setter Property="WidthRequest"
+                    Value="25" />
+            <Setter Property="HeightRequest"
+                    Value="25" />
+            <Setter Property="HorizontalOptions"
+                    Value="EndAndExpand" />
+            <Setter Property="Command"
+                    Value="{Binding GoToLinkCommand}" />
+        </Style>
+
+        <Style TargetType="Label"
+               x:Key="SectionHeaderLabelStyle">
+            <Setter Property="FontSize"
+                    Value="Medium" />
+        </Style>
+        <converters:EndDateConverter x:Key="EndDateConverter" />
+    </base:BaseStudentContentPage.Resources>
+    <StackLayout Orientation="Vertical">
+        <Frame Style="{StaticResource SectionFrameStyle}">
+            <StackLayout>
+                <Grid>
+                    <Image Source="{Binding TileBackgroundUrl}"
+                           HeightRequest="150"
+                           HorizontalOptions="FillAndExpand" />
+                    <Frame CornerRadius="75"
+                           HeightRequest="150"
+                           Padding="0"
+                           WidthRequest="150"
+                           HorizontalOptions="StartAndExpand"
+                           IsClippedToBounds="True">
+                        <Image Source="{Binding Student.ImageUrl}"
+                               HeightRequest="300"
+                               WidthRequest="300"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                    </Frame>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="1" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="5" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="{Binding Student.FullName}"
+                           FontSize="Title"
+                           TextColor="Black"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Grid.Column="1" />
+                    <Label Text="{Binding Student.Position}"
+                           FontSize="Subtitle"
+                           TextColor="Gray"
+                           Grid.Row="2"
+                           Grid.Column="1" />
+                    <ImageButton Source="https://img.icons8.com/color/256/linkedin-circled.png"
+                                 Grid.Column="2"
+                                 CommandParameter="{x:Static oleksandrKot:LinkType.LinkedIn}" />
+                    <ImageButton Source="https://img.icons8.com/color/256/telegram-app.png"
+                                 Grid.Row="2"
+                                 Grid.Column="2"
+                                 CommandParameter="{x:Static oleksandrKot:LinkType.Telegram}" />
+                </Grid>
+            </StackLayout>
+        </Frame>
+        <Frame Style="{StaticResource SectionFrameStyle}">
+            <StackLayout Orientation="Vertical"
+                         BindableLayout.ItemsSource="{Binding Student.ExperienceItems}">
+                <Label Text="Experience"
+                       Style="{StaticResource SectionHeaderLabelStyle}" />
+                <!--There is some bug with xamarin emulator. Need to remove and return to show header-->
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:ExperienceItem">
+                        <StackLayout Padding="4, 4"
+                                     Orientation="Vertical">
+                            <Label Text="{Binding CompanyName}" 
+                                   FontSize="Body"
+                                   TextColor="Black"/>
+                            <Label TextColor="DimGray">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding StartDate, StringFormat='{0:MMM yyyy}'}" />
+                                        <Span Text=" - " />
+                                        <Span Text="{Binding EndDate, Converter={StaticResource EndDateConverter}}" />
+                                        <Span Text=" (" />
+                                        <Span Text="{Binding Duration.TotalDays, StringFormat='{0} days'}" />
+                                        <Span Text=")" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>       
+        </Frame>
+        <Frame Style="{StaticResource SectionFrameStyle}">
+            <StackLayout>
+                <Label Text="Technologies"
+                       Style="{StaticResource SectionHeaderLabelStyle}" />
+                <FlexLayout BindableLayout.ItemsSource="{Binding Student.Technologies}"
+                        Direction="Row"
+                        Wrap="Wrap"
+                        AlignItems="Center">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                        <Frame BorderColor="#027AFF"
+                               BackgroundColor="Transparent"
+                               MinimumWidthRequest="100"
+                               Padding="10"
+                               CornerRadius="25"
+                               Margin="0,3,3,3">
+                            <Label TextColor="#027AFF"
+                                   VerticalOptions="Center"
+                                   FontSize="Micro"
+                                   Text="{Binding}">
+                            </Label>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+                </FlexLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
 </base:BaseStudentContentPage>

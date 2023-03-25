@@ -40,11 +40,13 @@ namespace IPZm.ViewModels
                     "Remote"),
             });
         
+        
+        
         private readonly Dictionary<BaseStudentContentPage, Student> _studentsPageDictionary = new Dictionary<BaseStudentContentPage, Student>
         {
             { new VitaliiSmalView(), vitaliiSmal },
             { new BorysHlynskyiView(), new Student("Borys Hlynskyi") },
-            {new OleksandrKotView(), new Student("Oleksandr Kot") }
+            { new OleksandrKotView(), OleksandrKotViewModel.studentData }
         };
 
         public StudentsListPageViewModel()
