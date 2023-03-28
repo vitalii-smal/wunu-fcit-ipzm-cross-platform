@@ -6,10 +6,12 @@ namespace IPZm.Students.AndriiStepaniuk
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AndriiStepaniukView : BaseStudentContentPage
     {
+        private AndriiStepaniukViewModel _viewModel;
         public AndriiStepaniukView()
         {
-            InitializeComponent();
-            BindingContext = new AndriiStepaniukViewModel();
+            _viewModel = new AndriiStepaniukViewModel();
+            BindingContext = _viewModel;
+            InitializeComponent();            
         }
     }
 }
