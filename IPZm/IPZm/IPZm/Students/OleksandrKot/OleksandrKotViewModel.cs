@@ -38,7 +38,7 @@ namespace IPZm.Students.OleksandrKot
                         "Audit Soft",
                         new DateTime(2019, 1, 31),
                         new DateTime(2019, 7, 1),
-                        "Khmelnitskii"),
+                        "Khmelnytskyi"),
                 });
 
 
@@ -50,11 +50,6 @@ namespace IPZm.Students.OleksandrKot
             set { SetProperty(ref _tileBackgroundUrl, value); }
         }
 
-        public DateTime Period
-        {
-            get { return new DateTime(1, 10, 11); }
-        }
-
         public Command<LinkType?> GoToLinkCommand { get; private set; }
 
         public OleksandrKotViewModel()
@@ -62,6 +57,7 @@ namespace IPZm.Students.OleksandrKot
             GoToLinkCommand = new Command<LinkType?>(GoToLinkCommandExecute);
         }
 
+        //Do Xamarin have AsyncCommands? async void is a bad practice
         private async void GoToLinkCommandExecute(LinkType? obj)
         {
             if (obj == null)

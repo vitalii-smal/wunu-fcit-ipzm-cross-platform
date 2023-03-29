@@ -117,6 +117,9 @@
                             <Label Text="{Binding CompanyName}" 
                                    FontSize="Body"
                                    TextColor="Black"/>
+                            <Label Text="{Binding Location}"
+                                   FontSize="Caption"
+                                   FontAttributes="Bold" />
                             <Label TextColor="DimGray">
                                 <Label.FormattedText>
                                     <FormattedString>
