@@ -39,12 +39,39 @@ namespace IPZm.ViewModels
                     new DateTime(2022,9, 1),
                     "Remote"),
             });
-        
+
+        private static Student ninelPomazova = new Student(
+           "Ninel",
+           "Pomazova",
+           "https://url1.io/s/VJg6b",
+           ".NET developer",
+           "+38 098 765 4321",
+           "Nineliana",
+           new List<string>
+           {
+                "C#", ".NET", "Azure functions",
+                "ASP.NET", "Docker", "ASP.NET",
+                "CI/CD", 
+           },
+           new List<ExperienceItem>
+           {
+                new ExperienceItem(
+                    "REMT",
+                    new DateTime(2021,7, 1),
+                    new DateTime(2022,1, 1),
+                    "Remote"),
+                new ExperienceItem(
+                    "Humanitarian",
+                    new DateTime(2022,1, 1),
+                    new DateTime(2022,9, 1),
+                    "Remote"),
+           });
+
         private readonly Dictionary<BaseStudentContentPage, Student> _studentsPageDictionary = new Dictionary<BaseStudentContentPage, Student>
         {
             { new VitaliiSmalView(), vitaliiSmal },
             { new BorysHlynskyiView(), new Student("Borys Hlynskyi") },
-            { new NinelPomazovaView(), new Student("Ninel Pomazova") },
+            { new NinelPomazovaView(), ninelPomazova },
         };
 
         public StudentsListPageViewModel()
