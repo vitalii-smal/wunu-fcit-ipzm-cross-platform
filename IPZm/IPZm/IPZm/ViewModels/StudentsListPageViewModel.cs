@@ -4,6 +4,7 @@ using System.Windows.Input;
 using IPZm.Models;
 using IPZm.Students.Base;
 using IPZm.Students.BorysHlynskyi;
+using IPZm.Students.NinelPomazova;
 using IPZm.Students.VitaliiSmal;
 using Xamarin.Forms;
 
@@ -15,6 +16,7 @@ namespace IPZm.ViewModels
         {
             { new VitaliiSmalView(), new Student("Vitalii Smal") },
             { new BorysHlynskyiView(), new Student("Borys Hlynskyi") },
+            { new NinelPomazovaView(), new Student("Ninel Pomazova") },
         };
 
         public StudentsListPageViewModel()
