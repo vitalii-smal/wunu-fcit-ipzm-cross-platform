@@ -1,15 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <base:BaseStudentContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:base="clr-namespace:IPZm.Students.Base;assembly=IPZm"
-    xmlns:vitaliiSmal="clr-namespace:IPZm.Students.VitaliiSmal;assembly=IPZm"
-    xmlns:models="clr-namespace:IPZm.Models;assembly=IPZm"
-    xmlns:vitaliiSmal1="clr-namespace:IPZm.Students.VitaliiSmal;assembly=IPZm"
-    x:Class="IPZm.Students.VitaliiSmal.VitaliiSmalView"
-    x:DataType="vitaliiSmal:VitaliiSmalViewModel"
+    xmlns:base="clr-namespace:IPZm.Students.Base;assembly=IPZm" 
+    xmlns:models="clr-namespace:IPZm.Models" 
+    x:Class="IPZm.Students.NinelPomazova.NinelPomazovaView"
     Title="{Binding Student.FullName}">
-    
+
     <base:BaseStudentContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Label" x:Key="tagLabel">
@@ -109,13 +106,8 @@
             Margin="16, 4">
             <Label Style="{x:StaticResource tagLabel}" Text="C#"/>
             <Label Style="{x:StaticResource tagLabel}" Text=".NET"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="Xamarin"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="Android"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="iOS"/>
             <Label Style="{x:StaticResource tagLabel}" Text="ASP.NET"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="Xamarin"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="Android"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="iOS"/>
+            <Label Style="{x:StaticResource tagLabel}" Text="Azure functions"/>
             <Label Style="{x:StaticResource tagLabel}" Text="ASP.NET"/>
         </FlexLayout>
         <BoxView
