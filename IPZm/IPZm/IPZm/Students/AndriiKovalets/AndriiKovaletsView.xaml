@@ -3,8 +3,162 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:base="clr-namespace:IPZm.Students.Base;assembly=IPZm"
+    xmlns:models="clr-namespace:IPZm.Models"
+    xmlns:local="clr-namespace:IPZm.Students.AndriiKovalets"
     x:Class="IPZm.Students.AndriiKovalets.AndriiKovaletsView"
+    xmlns:xamarinEssentials="clr-namespace:Xamarin.Essentials;assembly=Xamarin.Essentials"
     Title="{Binding Student.FullName}">
 
+    <base:BaseStudentContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="tagLabel">
+                <Setter Property="Background" Value="Gray"/>
+                <Setter Property="Padding" Value="4"/>
+                <Setter Property="Margin" Value="4"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+            <local:DateConvecter x:Key="DateConvecter" />
+        </ResourceDictionary>
+    </base:BaseStudentContentPage.Resources>
+    <ScrollView>
+        <StackLayout
+            Margin="0, 16, 0, 20"
+            Orientation="Vertical">
+
+            <Frame CornerRadius="75"
+                HeightRequest="150"
+                Padding="0"
+                WidthRequest="150"
+                HorizontalOptions="Center"
+                IsClippedToBounds="True">
+                <Image Source="{Binding Student.ImageUrl}"
+                    HeightRequest="300"
+                    WidthRequest="300"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+            </Frame>
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                FontSize="Title">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding Student.FirstName}"/>
+                        <Span Text=" "/>
+                        <Span Text="{Binding Student.LastName}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label 
+                Margin="0,0, 0, 16"
+                HorizontalOptions="Center"
+                FontSize="Subtitle"
+                TextColor="DimGray"
+                Text="{Binding Student.Position}"/>
+            <BoxView
+                HeightRequest="4"
+                BackgroundColor="LightGray"
+                HorizontalOptions="FillAndExpand"/>
+
+            <Grid RowSpacing="0"
+              ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Label 
+                FontSize="20"
+                Margin="16, 4"
+                Text="Contact Info"
+                Grid.Column="0"/>
+
+                <Label
+                    Margin="16, 4"
+                    Text="{Binding Student.PhoneNumber, StringFormat='Phone: {0}'}"
+                    Grid.Column="0"
+                    Grid.Row="2"/>
+
+                <ImageButton Source="http://bit.ly/3Kkv2QK"
+                    BackgroundColor="Transparent"
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    HorizontalOptions="End"
+                    Padding="4"
+                    Command="{Binding OpenLinkedInCommand}"
+                    Grid.Column="1"/>
+
+                <ImageButton Source="http://bit.ly/3KjBWpc"
+                    BackgroundColor="Transparent"
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    HorizontalOptions="End"
+                    Padding="4"
+                    Command="{Binding OpenTelegramCommand}"
+                    Grid.Column="2"/>
+            </Grid>
+
+            <BoxView
+                HeightRequest="4"
+                CornerRadius="2"
+                BackgroundColor="LightGray"
+                HorizontalOptions="FillAndExpand"/>
+            <Label 
+                FontSize="20"
+                Margin="16, 4"
+                Text="Experience"/>
+            <StackLayout
+                Orientation="Vertical"
+                BindableLayout.ItemsSource="{Binding Student.ExperienceItems}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:ExperienceItem">
+                        <StackLayout
+                            Padding="16, 4"
+                            Orientation="Vertical">
+                            <Label Text="{Binding CompanyName}"/>
+                            <Label TextColor="DimGray">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding StartDate, StringFormat='{0:MMM yyyy}'}"/>
+                                        <Span Text=" - " />
+                                        <Span Text="{Binding EndDate,  Converter={StaticResource DateConvecter}}" />
+                                        <Span Text=" (" />
+                                        <Span Text="{Binding Duration.TotalDays, StringFormat='{0} days'}" />
+                                        <Span Text=")" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+            <BoxView
+                HeightRequest="4"
+                BackgroundColor="LightGray"
+                HorizontalOptions="FillAndExpand"/>
+            <Label 
+                FontSize="20"
+                Margin="16, 4"
+                Text="Technologies"/>
+            <FlexLayout
+                Direction="Row"
+                Wrap="Wrap"
+                AlignItems="Center"
+                Margin="16, 4">
+                <Label Style="{x:StaticResource tagLabel}" Text="C#"/>
+                <Label Style="{x:StaticResource tagLabel}" Text=".NET"/>
+                <Label Style="{x:StaticResource tagLabel}" Text="ASP.NET"/>
+                <Label Style="{x:StaticResource tagLabel}" Text="MSSQL"/>
+                <Label Style="{x:StaticResource tagLabel}" Text="Angular"/>
+                <Label Style="{x:StaticResource tagLabel}" Text="TypeScript"/>
+            </FlexLayout>
+            <BoxView
+                HeightRequest="4"
+                BackgroundColor="LightGray"
+                HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ScrollView>
 </base:BaseStudentContentPage>
-    

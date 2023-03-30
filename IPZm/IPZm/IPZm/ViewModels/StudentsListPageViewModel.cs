@@ -44,7 +44,7 @@ namespace IPZm.ViewModels
         {
             { new VitaliiSmalView(), vitaliiSmal },
             { new BorysHlynskyiView(), new Student("Borys Hlynskyi") },
-            { new AndriiKovaletsView(), new Student("Andrii Kovalets") },
+            { new AndriiKovaletsView(), AndriiKovaletsViewModel.andriiKovaletsData },
         };
 
         public StudentsListPageViewModel()
