@@ -2,8 +2,14 @@ using IPZm.Models;
 
 namespace IPZm.Students.Base
 {
-    public abstract class BaseStudentViewModel
+    public abstract class BaseStudentViewModel : BaseViewModel
     {
-        public Student Student { get; set; }
+        private Student _student;
+
+        public Student Student
+        {
+            get => _student;
+            set => SetProperty(ref _student, value);
+        }
     }
 }
