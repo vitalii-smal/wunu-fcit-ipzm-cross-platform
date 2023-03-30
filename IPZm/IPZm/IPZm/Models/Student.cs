@@ -8,13 +8,13 @@ namespace IPZm.Models
         {
             FirstName = firstName;
         }
-
+        
         public Student(
-            string firstName,
-            string lastName,
-            string imageUrl,
-            string position,
-            string phoneNumber,
+            string firstName, 
+            string lastName, 
+            string imageUrl, 
+            string position, 
+            string phoneNumber, 
             string telegramLogin,
             List<string> technologies,
             List<ExperienceItem> experienceItems = null)
@@ -34,17 +34,17 @@ namespace IPZm.Models
         public string FirstName { get; }
 
         public string LastName { get; }
-
+        
         public string ImageUrl { get; }
-
+        
         public string Position { get; }
-
+        
         public string PhoneNumber { get; }
-
+        
         public string TelegramLogin { get; }
-
+        
         public List<string> Technologies { get; }
-
+        
         public List<ExperienceItem> ExperienceItems { get; }
     }
 }

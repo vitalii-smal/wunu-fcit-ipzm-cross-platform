@@ -13,13 +13,13 @@ namespace IPZm.Models
         }
 
         public string CompanyName { get; }
-
+        
         public DateTime StartDate { get; }
-
+        
         public DateTime EndDate { get; }
 
         public TimeSpan Duration => EndDate - StartDate;
-
+        
         public string Location { get; }
     }
 }

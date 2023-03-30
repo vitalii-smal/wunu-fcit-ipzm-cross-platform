@@ -16,14 +16,14 @@ namespace IPZm.ViewModels
         private static Student vitaliiSmal = new Student(
             "Vitalii",
             "Smal",
-            "https://bit.ly/40dpdda",
+            "https://bit.ly/40dpdda", 
             "Xamarin developer",
             "+38 099 689 18 13",
             "VITALIISMAL",
             new List<string>
             {
-                "C#", ".NET", "Xamarin",
-                "Android", "iOS", "ASP.NET",
+                "C#", ".NET", "Xamarin", 
+                "Android", "iOS", "ASP.NET", 
                 "Kotlin", "Swift", "Git", "Bash", "PowerShell"
             },
             new List<ExperienceItem>
@@ -39,9 +39,7 @@ namespace IPZm.ViewModels
                     new DateTime(2022,9, 1),
                     "Remote"),
             });
-
-
-
+        
         private readonly Dictionary<BaseStudentContentPage, Student> _studentsPageDictionary = new Dictionary<BaseStudentContentPage, Student>
         {
             { new VitaliiSmalView(), vitaliiSmal },
@@ -52,11 +50,12 @@ namespace IPZm.ViewModels
         public StudentsListPageViewModel()
         {
             InitStudents();
-
+            
             Students = _studentsPageDictionary.Values.ToList();
-
+            
             StudentSelectedCommand = new Command<Student>(StudentSelected);
         }
+
         private void InitStudents()
         {
             foreach (var studentPage in _studentsPageDictionary.Keys)
@@ -64,13 +63,15 @@ namespace IPZm.ViewModels
                 studentPage.SetStudent(_studentsPageDictionary[studentPage]);
             }
         }
-
+        
         private void StudentSelected(Student student)
         {
             var page = _studentsPageDictionary.FirstOrDefault(kv => kv.Value == student).Key;
             App.Current.MainPage.Navigation.PushAsync(page);
         }
+
         public ICommand StudentSelectedCommand { get; }
+
         public IList<Student> Students { get; }
     }
 }
