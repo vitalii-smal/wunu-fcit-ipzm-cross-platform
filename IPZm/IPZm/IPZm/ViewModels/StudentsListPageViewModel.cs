@@ -5,6 +5,7 @@ using System.Windows.Input;
 using IPZm.Models;
 using IPZm.Students.Base;
 using IPZm.Students.BorysHlynskyi;
+using IPZm.Students.OleksandrKot;
 using IPZm.Students.VitaliiSmal;
 using Xamarin.Forms;
 
@@ -43,6 +44,7 @@ namespace IPZm.ViewModels
         {
             { new VitaliiSmalView(), vitaliiSmal },
             { new BorysHlynskyiView(), new Student("Borys Hlynskyi") },
+            {new OleksandrKotView(), new Student("Oleksandr Kot") }
         };
 
         public StudentsListPageViewModel()
