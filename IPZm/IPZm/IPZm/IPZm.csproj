@@ -15,6 +15,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <EmbeddedResource Update="Students\NinelPomazova\NinelPomazovaView.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
       <EmbeddedResource Update="Students\OleksandrKot\OleksandrKotView.xaml">
         <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       </EmbeddedResource>
