@@ -101,6 +101,7 @@ namespace IPZm.ViewModels
             { new BorysHlynskyiView(), new Student("Borys Hlynskyi") },
             { new ValeriiKrutkoView(), valeriiKrutko },
             { new NinelPomazovaView(), ninelPomazova },
+            { new OleksandrKotView(), OleksandrKotViewModel.studentData }
         };
 
         public StudentsListPageViewModel()
