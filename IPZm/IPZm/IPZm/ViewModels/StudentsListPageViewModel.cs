@@ -6,6 +6,7 @@ using IPZm.Models;
 using IPZm.Students.Base;
 using IPZm.Students.BorysHlynskyi;
 using IPZm.Students.VitaliiSmal;
+using IPZm.Students.NazariiPiatnochka;
 using Xamarin.Forms;
 
 namespace IPZm.ViewModels
@@ -38,11 +39,37 @@ namespace IPZm.ViewModels
                     new DateTime(2022,9, 1),
                     "Remote"),
             });
-        
+
+        private static Student nazariiPiatnochka = new Student(
+            "Nazarii",
+            "Piatnochka",
+            "https://krasivosti.pro/uploads/posts/2022-01/1641448571_13-krasivosti-pro-p-selfi-kotov-krasivo-foto-15.jpg",
+            "Frontend trainee developer",
+            "+38 097 138 60 10",
+            "gignaks",
+            new List<string>
+            {
+                "HTML", "CSS", "JavaScript"
+            },
+            new List<ExperienceItem>
+            {
+                new ExperienceItem(
+                    "NAU",
+                    new DateTime(2018,9, 1),
+                    new DateTime(2022,6, 30),
+                    "Kyiv"),
+                new ExperienceItem(
+                    "WUNU",
+                    new DateTime(2022,10, 1),
+                    new DateTime(2023,12, 31),
+                    "Ternopil"),
+            });
+
         private readonly Dictionary<BaseStudentContentPage, Student> _studentsPageDictionary = new Dictionary<BaseStudentContentPage, Student>
         {
             { new VitaliiSmalView(), vitaliiSmal },
             { new BorysHlynskyiView(), new Student("Borys Hlynskyi") },
+            { new NazariiPiatnochkaView(), nazariiPiatnochka },
         };
 
         public StudentsListPageViewModel()

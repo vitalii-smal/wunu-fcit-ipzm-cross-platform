@@ -13,4 +13,10 @@
         <PackageReference Include="Xamarin.Essentials" Version="1.7.5" />
         <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Students\NazariiPiatnochka\NazariiPiatnochkaView.xaml.cs">
+        <DependentUpon>NazariiPiatnochkaView.xaml</DependentUpon>
+      </Compile>
+    </ItemGroup>
 </Project>
