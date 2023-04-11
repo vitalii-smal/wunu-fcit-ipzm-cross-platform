@@ -98,15 +98,36 @@ namespace IPZm.ViewModels
                     "Remote"),
            });
 
+
+        private static Student borysHlynskyi = new Student(
+            "Borys",
+            "Hlynskyi",
+            "https://bit.ly/3Zv8ykb",
+            "Web developer (Frontend)",
+            "+38 068 14 85 935",
+            "@Quixoticelixerr",
+            new List<string>
+            {
+                "Git","JS","TS","CSS","HTML","React","Vue","Next.js","11ty","Astro",
+            },
+            new List<ExperienceItem>
+            {
+                new ExperienceItem(
+                    "Exadel",
+                    new DateTime(2021,9, 1),
+                    new DateTime(2023,3, 1),
+                    "Remote"),
+            });
+
         private readonly Dictionary<BaseStudentContentPage, Student> _studentsPageDictionary = new Dictionary<BaseStudentContentPage, Student>
         {
             { new VitaliiSmalView(), vitaliiSmal },
-            { new BorysHlynskyiView(), new Student("Borys Hlynskyi") },
             { new AndriiKovaletsView(), AndriiKovaletsViewModel.andriiKovaletsData },
             { new ValeriiKrutkoView(), valeriiKrutko },
             { new NinelPomazovaView(), ninelPomazova },
             { new OleksandrKotView(), OleksandrKotViewModel.studentData },
-            { new AndriiStepaniukView(), AndriiStepaniukViewModel.studentData }
+            { new AndriiStepaniukView(), AndriiStepaniukViewModel.studentData },
+            { new BorysHlynskyiView(), borysHlynskyi },
         };
 
         public StudentsListPageViewModel()
