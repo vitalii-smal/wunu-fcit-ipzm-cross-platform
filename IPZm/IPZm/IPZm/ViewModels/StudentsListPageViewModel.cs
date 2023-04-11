@@ -6,6 +6,7 @@ using IPZm.Models;
 using IPZm.Students.Base;
 using IPZm.Students.BorysHlynskyi;
 using IPZm.Students.NinelPomazova;
+using IPZm.Students.OleksandrKot;
 using IPZm.Students.ValeriiKrutko;
 using IPZm.Students.VitaliiSmal;
 using Xamarin.Forms;
