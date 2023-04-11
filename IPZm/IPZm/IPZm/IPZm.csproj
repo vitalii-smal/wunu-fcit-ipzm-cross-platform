@@ -31,4 +31,10 @@
         <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       </EmbeddedResource>
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Students\NazariiPiatnochka\NazariiPiatnochkaView.xaml.cs">
+        <DependentUpon>NazariiPiatnochkaView.xaml</DependentUpon>
+      </Compile>
+    </ItemGroup>
 </Project>
