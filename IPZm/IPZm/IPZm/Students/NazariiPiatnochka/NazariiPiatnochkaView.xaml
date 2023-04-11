@@ -3,11 +3,11 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:base="clr-namespace:IPZm.Students.Base;assembly=IPZm"
-    xmlns:borysHlynskyi="clr-namespace:IPZm.Students.BorysHlynskyi;assembly=IPZm"
+    xmlns:nazariiPiatnochka="clr-namespace:IPZm.Students.NazariiPiatnochka;assembly=IPZm"
     xmlns:models="clr-namespace:IPZm.Models;assembly=IPZm"
-    xmlns:borysHlynskyi1="clr-namespace:IPZm.Students.BorysHlynskyi;assembly=IPZm"
-    x:Class="IPZm.Students.BorysHlynskyi.BorysHlynskyiView"
-    x:DataType="borysHlynskyi:BorysHlynskyiViewModel"
+    xmlns:nazariiPiatnochka1="clr-namespace:IPZm.Students.NazariiPiatnochka;assembly=IPZm"
+    x:Class="IPZm.Students.NazariiPiatnochka.NazariiPiatnochkaView"
+    x:DataType="nazariiPiatnochka:NazariiPiatnochkaViewModel"
     Title="{Binding Student.FullName}">
 
     <base:BaseStudentContentPage.Resources>
@@ -53,7 +53,7 @@
             HorizontalOptions="FillAndExpand"/>
         <Label 
             FontSize="20"
-            Margin="16, 4"
+            HorizontalOptions="Center"
             Text="Contact Info"/>
         <Label
             Margin="16, 4"
@@ -67,8 +67,8 @@
             HorizontalOptions="FillAndExpand"/>
         <Label 
             FontSize="20"
-            Margin="16, 4"
-            Text="Experience"/>
+            HorizontalOptions="Center"
+            Text="Education"/>
         <StackLayout
             Orientation="Vertical"
             BindableLayout.ItemsSource="{Binding Student.ExperienceItems}">
@@ -84,9 +84,6 @@
                                     <Span Text="{Binding StartDate, StringFormat='{0:MMM yyyy}'}" />
                                     <Span Text=" - " />
                                     <Span Text="{Binding EndDate, StringFormat='{0:MMM yyyy}'}" />
-                                    <Span Text=" (" />
-                                    <Span Text="{Binding Duration.TotalDays, StringFormat='{0} days'}" />
-                                    <Span Text=")" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
@@ -100,23 +97,16 @@
             HorizontalOptions="FillAndExpand"/>
         <Label 
             FontSize="20"
-            Margin="16, 4"
+            HorizontalOptions="Center"
             Text="Technologies"/>
         <FlexLayout
             Direction="Row"
             Wrap="Wrap"
             AlignItems="Center"
             Margin="16, 4">
-            <Label Style="{x:StaticResource tagLabel}" Text="Git"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="JS"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="TS"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="CSS"/>
             <Label Style="{x:StaticResource tagLabel}" Text="HTML"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="React"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="Vue"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="Next.js"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="11ty"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="Astro"/>
+            <Label Style="{x:StaticResource tagLabel}" Text="CSS"/>
+            <Label Style="{x:StaticResource tagLabel}" Text="JavaScript"/>
         </FlexLayout>
         <BoxView
             HeightRequest="4"

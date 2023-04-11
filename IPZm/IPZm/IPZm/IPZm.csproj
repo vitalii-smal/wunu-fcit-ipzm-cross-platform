@@ -27,5 +27,16 @@
         <Generator>MSBuild:Compile</Generator>
       </EmbeddedResource>
     </ItemGroup>
-  
+
+    <ItemGroup>
+      <EmbeddedResource Update="Students\AndriiStepaniuk\AndriiStepaniukView.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Students\NazariiPiatnochka\NazariiPiatnochkaView.xaml.cs">
+        <DependentUpon>NazariiPiatnochkaView.xaml</DependentUpon>
+      </Compile>
+    </ItemGroup>
 </Project>

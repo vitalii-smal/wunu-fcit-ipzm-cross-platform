@@ -1,7 +1,7 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.5.33516.290
+VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPZm", "IPZm\IPZm\IPZm.csproj", "{7D69D2EF-BB59-4BA3-9E08-5D58F92ABF94}"
 EndProject
@@ -120,8 +120,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {263D816A-DF07-4C7D-AD35-B1D600523272}
 	EndGlobalSection
 EndGlobal

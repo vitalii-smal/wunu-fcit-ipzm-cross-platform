@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using IPZm.Models;
+using IPZm.Students.AndriiStepaniuk;
+using IPZm.Students.AndriiKovalets;
 using IPZm.Students.Base;
 using IPZm.Students.BorysHlynskyi;
 using IPZm.Students.NinelPomazova;
+using IPZm.Students.OleksandrKot;
 using IPZm.Students.ValeriiKrutko;
 using IPZm.Students.VitaliiSmal;
 using IPZm.Students.VitaStetsevych;
+using IPZm.Students.NazariiPiatnochka;
 using Xamarin.Forms;
 
 namespace IPZm.ViewModels
@@ -123,14 +127,64 @@ namespace IPZm.ViewModels
                     "Remote"),
            });
 
+
+        private static Student borysHlynskyi = new Student(
+            "Borys",
+            "Hlynskyi",
+            "https://bit.ly/3Zv8ykb",
+            "Web developer (Frontend)",
+            "+38 068 14 85 935",
+            "@Quixoticelixerr",
+            new List<string>
+            {
+                "Git","JS","TS","CSS","HTML","React","Vue","Next.js","11ty","Astro",
+            },
+            new List<ExperienceItem>
+            {
+                new ExperienceItem(
+                    "Exadel",
+                    new DateTime(2021,9, 1),
+                    new DateTime(2023,3, 1),
+                    "Remote"),
+            });
+
+
+        private static Student nazariiPiatnochka = new Student(
+            "Nazarii",
+            "Piatnochka",
+            "https://krasivosti.pro/uploads/posts/2022-01/1641448571_13-krasivosti-pro-p-selfi-kotov-krasivo-foto-15.jpg",
+            "Frontend trainee developer",
+            "+38 097 138 60 10",
+            "gignaks",
+            new List<string>
+            {
+                "HTML", "CSS", "JavaScript"
+            },
+            new List<ExperienceItem>
+            {
+                new ExperienceItem(
+                    "NAU",
+                    new DateTime(2018,9, 1),
+                    new DateTime(2022,6, 30),
+                    "Kyiv"),
+                new ExperienceItem(
+                    "WUNU",
+                    new DateTime(2022,10, 1),
+                    new DateTime(2023,12, 31),
+                    "Ternopil"),
+            });
+
         private readonly Dictionary<BaseStudentContentPage, Student> _studentsPageDictionary = new Dictionary<BaseStudentContentPage, Student>
         {
             { new VitaliiSmalView(), vitaliiSmal },
-            { new BorysHlynskyiView(), new Student("Borys Hlynskyi") },
+            { new AndriiKovaletsView(), AndriiKovaletsViewModel.andriiKovaletsData },
             { new ValeriiKrutkoView(), valeriiKrutko },
             { new NinelPomazovaView(), ninelPomazova },
+            { new OleksandrKotView(), OleksandrKotViewModel.studentData },
+            { new AndriiStepaniukView(), AndriiStepaniukViewModel.studentData },
+            { new BorysHlynskyiView(), borysHlynskyi },
+            { new NazariiPiatnochkaView(), nazariiPiatnochka },
             { new VitaStetsevychView(), vitaStetsevych }
-
         };
 
         public StudentsListPageViewModel()
