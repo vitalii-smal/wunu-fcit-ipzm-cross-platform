@@ -11,6 +11,7 @@ using IPZm.Students.NinelPomazova;
 using IPZm.Students.OleksandrKot;
 using IPZm.Students.ValeriiKrutko;
 using IPZm.Students.VitaliiSmal;
+using IPZm.Students.VitaStetsevych;
 using IPZm.Students.NazariiPiatnochka;
 using Xamarin.Forms;
 
@@ -99,6 +100,33 @@ namespace IPZm.ViewModels
                     "Remote"),
            });
 
+        private static Student vitaStetsevych = new Student(
+           "Vita",
+           "Stetsevych",
+           "https://url1.io/s/4k5kz", 
+           "Web developer",
+           "+38 098 409 4059",
+           "MegaMastermind", 
+           new List<string>
+           {
+                "HTML/CSS", "JavaScript", "Git",
+                "PHP", "Python", "MySQL",
+                "C#",
+           },
+           new List<ExperienceItem>
+           {
+                new ExperienceItem(
+                    "VitaSoftware",
+                    new DateTime(2020,9, 1),
+                    new DateTime(2021,1, 4),
+                    "Remote"),
+                new ExperienceItem(
+                    "Codecool",
+                    new DateTime(2021,12, 1),
+                    new DateTime(2023,9, 1),
+                    "Remote"),
+           });
+
 
         private static Student borysHlynskyi = new Student(
             "Borys",
@@ -156,6 +184,7 @@ namespace IPZm.ViewModels
             { new AndriiStepaniukView(), AndriiStepaniukViewModel.studentData },
             { new BorysHlynskyiView(), borysHlynskyi },
             { new NazariiPiatnochkaView(), nazariiPiatnochka },
+            { new VitaStetsevychView(), vitaStetsevych }
         };
 
         public StudentsListPageViewModel()

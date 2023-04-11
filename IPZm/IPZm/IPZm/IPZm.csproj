@@ -20,8 +20,10 @@
       </EmbeddedResource>
     </ItemGroup>
 
+ 
+
     <ItemGroup>
-      <EmbeddedResource Update="Students\OleksandrKot\OleksandrKotView.xaml">
+      <EmbeddedResource Update="Students\VitaStetsevych\VitaStetsevychView.xaml">
         <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       </EmbeddedResource>
     </ItemGroup>
