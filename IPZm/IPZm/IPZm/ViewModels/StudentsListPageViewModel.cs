@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using IPZm.Models;
+using IPZm.Students.AndriiStepaniuk;
+using IPZm.Students.AndriiKovalets;
 using IPZm.Students.Base;
 using IPZm.Students.BorysHlynskyi;
+using IPZm.Students.NinelPomazova;
+using IPZm.Students.OleksandrKot;
+using IPZm.Students.ValeriiKrutko;
 using IPZm.Students.VitaliiSmal;
 using IPZm.Students.NazariiPiatnochka;
 using Xamarin.Forms;
@@ -39,6 +44,82 @@ namespace IPZm.ViewModels
                     new DateTime(2022,9, 1),
                     "Remote"),
             });
+        
+        private static Student valeriiKrutko = new Student(
+            "Valerii",
+            "Krutko",
+            "https://aspect-translations.com/wp-content/uploads/2022/02/Valeriy-Krutko.png", 
+            "Java developer",
+            "+38 955566110",
+            "javeteam",
+            new List<string>
+            {
+                "Java", "Spring", "CSS/HTML",
+                "JS/JQuery", "Linux", "Bash",
+                "MySQL", "PostgreSQL"
+            },
+            new List<ExperienceItem>
+            {
+                new ExperienceItem(
+                    "Khartep",
+                    new DateTime(2011,11, 11),
+                    new DateTime(2014,5, 31),
+                    "Kharkiv"),
+                new ExperienceItem(
+                    "Aspect Translations",
+                    new DateTime(2014,6, 1),
+                    new DateTime(2023,12, 31),
+                    "Remote"),
+            });
+        
+        private static Student ninelPomazova = new Student(
+           "Ninel",
+           "Pomazova",
+           "https://url1.io/s/VJg6b",
+           ".NET developer",
+           "+38 098 765 4321",
+           "Nineliana",
+           new List<string>
+           {
+                "C#", ".NET", "Azure functions",
+                "ASP.NET", "Docker", "ASP.NET",
+                "CI/CD", 
+           },
+           new List<ExperienceItem>
+           {
+                new ExperienceItem(
+                    "REMT",
+                    new DateTime(2021,7, 1),
+                    new DateTime(2022,1, 1),
+                    "Remote"),
+                new ExperienceItem(
+                    "Humanitarian",
+                    new DateTime(2022,1, 1),
+                    new DateTime(2022,9, 1),
+                    "Remote"),
+           });
+
+
+        private static Student borysHlynskyi = new Student(
+            "Borys",
+            "Hlynskyi",
+            "https://bit.ly/3Zv8ykb",
+            "Web developer (Frontend)",
+            "+38 068 14 85 935",
+            "@Quixoticelixerr",
+            new List<string>
+            {
+                "Git","JS","TS","CSS","HTML","React","Vue","Next.js","11ty","Astro",
+            },
+            new List<ExperienceItem>
+            {
+                new ExperienceItem(
+                    "Exadel",
+                    new DateTime(2021,9, 1),
+                    new DateTime(2023,3, 1),
+                    "Remote"),
+            });
+
 
         private static Student nazariiPiatnochka = new Student(
             "Nazarii",
@@ -68,7 +149,12 @@ namespace IPZm.ViewModels
         private readonly Dictionary<BaseStudentContentPage, Student> _studentsPageDictionary = new Dictionary<BaseStudentContentPage, Student>
         {
             { new VitaliiSmalView(), vitaliiSmal },
-            { new BorysHlynskyiView(), new Student("Borys Hlynskyi") },
+            { new AndriiKovaletsView(), AndriiKovaletsViewModel.andriiKovaletsData },
+            { new ValeriiKrutkoView(), valeriiKrutko },
+            { new NinelPomazovaView(), ninelPomazova },
+            { new OleksandrKotView(), OleksandrKotViewModel.studentData },
+            { new AndriiStepaniukView(), AndriiStepaniukViewModel.studentData },
+            { new BorysHlynskyiView(), borysHlynskyi },
             { new NazariiPiatnochkaView(), nazariiPiatnochka },
         };
 

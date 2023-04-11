@@ -1,13 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <base:BaseStudentContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:base="clr-namespace:IPZm.Students.Base;assembly=IPZm"
-    xmlns:borysHlynskyi="clr-namespace:IPZm.Students.BorysHlynskyi;assembly=IPZm"
-    xmlns:models="clr-namespace:IPZm.Models;assembly=IPZm"
-    xmlns:borysHlynskyi1="clr-namespace:IPZm.Students.BorysHlynskyi;assembly=IPZm"
-    x:Class="IPZm.Students.BorysHlynskyi.BorysHlynskyiView"
-    x:DataType="borysHlynskyi:BorysHlynskyiViewModel"
+    xmlns:base="clr-namespace:IPZm.Students.Base;assembly=IPZm" 
+    xmlns:models="clr-namespace:IPZm.Models" 
+    x:Class="IPZm.Students.NinelPomazova.NinelPomazovaView"
     Title="{Binding Student.FullName}">
 
     <base:BaseStudentContentPage.Resources>
@@ -107,16 +104,11 @@
             Wrap="Wrap"
             AlignItems="Center"
             Margin="16, 4">
-            <Label Style="{x:StaticResource tagLabel}" Text="Git"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="JS"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="TS"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="CSS"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="HTML"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="React"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="Vue"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="Next.js"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="11ty"/>
-            <Label Style="{x:StaticResource tagLabel}" Text="Astro"/>
+            <Label Style="{x:StaticResource tagLabel}" Text="C#"/>
+            <Label Style="{x:StaticResource tagLabel}" Text=".NET"/>
+            <Label Style="{x:StaticResource tagLabel}" Text="ASP.NET"/>
+            <Label Style="{x:StaticResource tagLabel}" Text="Azure functions"/>
+            <Label Style="{x:StaticResource tagLabel}" Text="ASP.NET"/>
         </FlexLayout>
         <BoxView
             HeightRequest="4"
