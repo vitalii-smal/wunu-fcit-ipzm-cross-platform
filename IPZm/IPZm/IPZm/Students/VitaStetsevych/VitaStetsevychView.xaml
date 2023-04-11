@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:base="clr-namespace:IPZm.Students.Base;assembly=IPZm" 
     xmlns:models="clr-namespace:IPZm.Models" 
-    x:Class="IPZm.Students.VitaStetsevych.VitaStetsevych"
+    x:Class="IPZm.Students.VitaStetsevych.VitaStetsevychView"
     Title="{Binding Student.FullName}">
 
     <base:BaseStudentContentPage.Resources>

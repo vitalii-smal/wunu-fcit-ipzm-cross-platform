@@ -5,7 +5,6 @@
     xmlns:base="clr-namespace:IPZm.Students.Base;assembly=IPZm"
     xmlns:vitaliiSmal="clr-namespace:IPZm.Students.VitaliiSmal;assembly=IPZm"
     xmlns:models="clr-namespace:IPZm.Models;assembly=IPZm"
-    xmlns:vitaliiSmal1="clr-namespace:IPZm.Students.VitaliiSmal;assembly=IPZm"
     x:Class="IPZm.Students.VitaliiSmal.VitaliiSmalView"
     x:DataType="vitaliiSmal:VitaliiSmalViewModel"
     Title="{Binding Student.FullName}">

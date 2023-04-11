@@ -24,7 +24,7 @@
 
     <ItemGroup>
       <EmbeddedResource Update="Students\VitaStetsevych\VitaStetsevychView.xaml">
-        <Generator>MSBuild:Compile</Generator>
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       </EmbeddedResource>
     </ItemGroup>
 

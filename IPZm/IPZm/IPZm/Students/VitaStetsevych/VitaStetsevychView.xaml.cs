@@ -1,11 +1,4 @@
 ﻿using IPZm.Students.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace IPZm.Students.VitaStetsevych
@@ -17,11 +10,6 @@ namespace IPZm.Students.VitaStetsevych
         {
             InitializeComponent();
             BindingContext = new VitaStetsevychViewModel();
-        }
-
-        private void InitializeComponent() //maybe
-        {
-            throw new NotImplementedException();
         }
     }
 }
