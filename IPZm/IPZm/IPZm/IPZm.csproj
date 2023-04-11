@@ -25,4 +25,10 @@
         <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       </EmbeddedResource>
     </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Students\AndriiStepaniuk\AndriiStepaniukView.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+    </ItemGroup>
 </Project>
