@@ -122,7 +122,6 @@ namespace IPZm.ViewModels
         private readonly Dictionary<BaseStudentContentPage, Student> _studentsPageDictionary = new Dictionary<BaseStudentContentPage, Student>
         {
             { new VitaliiSmalView(), vitaliiSmal },
-            { new BorysHlynskyiView(), new Student("Borys Hlynskyi") },
             { new AndriiKovaletsView(), AndriiKovaletsViewModel.andriiKovaletsData },
             { new ValeriiKrutkoView(), valeriiKrutko },
             { new NinelPomazovaView(), ninelPomazova },
