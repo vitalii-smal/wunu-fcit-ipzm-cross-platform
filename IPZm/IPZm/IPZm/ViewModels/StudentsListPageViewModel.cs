@@ -5,6 +5,7 @@ using System.Windows.Input;
 using IPZm.Models;
 using IPZm.Students.Base;
 using IPZm.Students.BorysHlynskyi;
+using IPZm.Students.ValeriiKrutko;
 using IPZm.Students.VitaliiSmal;
 using Xamarin.Forms;
 
@@ -39,10 +40,38 @@ namespace IPZm.ViewModels
                     "Remote"),
             });
         
+        private static Student valeriiKrutko = new Student(
+            "Valerii",
+            "Krutko",
+            "https://aspect-translations.com/wp-content/uploads/2022/02/Valeriy-Krutko.png", 
+            "Java developer",
+            "+38 955566110",
+            "javeteam",
+            new List<string>
+            {
+                "Java", "Spring", "CSS/HTML",
+                "JS/JQuery", "Linux", "Bash",
+                "MySQL", "PostgreSQL"
+            },
+            new List<ExperienceItem>
+            {
+                new ExperienceItem(
+                    "Khartep",
+                    new DateTime(2011,11, 11),
+                    new DateTime(2014,5, 31),
+                    "Kharkiv"),
+                new ExperienceItem(
+                    "Aspect Translations",
+                    new DateTime(2014,6, 1),
+                    new DateTime(2023,12, 31),
+                    "Remote"),
+            });
+        
         private readonly Dictionary<BaseStudentContentPage, Student> _studentsPageDictionary = new Dictionary<BaseStudentContentPage, Student>
         {
             { new VitaliiSmalView(), vitaliiSmal },
             { new BorysHlynskyiView(), new Student("Borys Hlynskyi") },
+            { new ValeriiKrutkoView(), valeriiKrutko },
         };
 
         public StudentsListPageViewModel()
